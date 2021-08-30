@@ -8,7 +8,8 @@ export default new Vuex.Store({
     readyInit: false
   },
   mutations: {
-    SOCKET_init(state, data) {
+    SOCKET_init (state, data)
+    {
       state.readyInit = data;
     }
   },
