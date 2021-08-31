@@ -8,11 +8,16 @@ import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "@/icons";
 Vue.config.productionTip = false;
+let serverDomain = null;
+if (process.env.NODE_ENV === "production")
+  serverDomain = "/";
+else
+  serverDomain = "localhost:3003";
 
 Vue.use(
   new VueSocketIO({
     debug: true,
-    connection: "http://vue.jimmyy512.com",
+    connection: serverDomain,
     vuex: {
       store,
       actionPrefix: "SOCKET_",
