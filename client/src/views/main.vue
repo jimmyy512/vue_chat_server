@@ -1,13 +1,28 @@
 <template>
   <div id="main">
-    <button @click="isfull=!isfull"> switch</button>
-    <button @click="postBetEvent"> 下注</button>
-    <button @click="postGiftEvent"> 送禮物</button>
+    <!-- <button @click="isfull=!isfull"> switch</button> -->
+    <a
+      href="https://github.com/jimmyy512/vue_chat_server"
+      style="color:white;"
+    >程式原始碼</a>
+    <div>
+      <button @click="postBetEvent"> 下注</button>
+      <button @click="postGiftEvent"> 送禮物</button>
+
+    </div>
+    <iframe
+      width="560"
+      height="350"
+      src="https://www.youtube.com/embed/p-rSdt0aFuw"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
     <chat
       ref="chat"
       :class="isfull?'FullCSS':'notFullCSS'"
       :isfull="isfull"
-      @click="isfull=!isfull"
       @ServerGetBet="ServerGetBet"
       @ServerGetGift="ServerGetGift"
     />
@@ -23,7 +38,7 @@ export default {
   data ()
   {
     return {
-      isfull: false
+      isfull: true
     };
   },
   methods: {
@@ -66,9 +81,11 @@ export default {
 #main {
   position: relative;
   height: 100%;
-  button{
-    margin:10px;
-    color:black;
+  background-image: url(~@/assets/BG.jpg);
+  padding-top:5px;
+  button {
+    margin: 10px;
+    color: black;
     background-color: white;
   }
   .notFullCSS {
@@ -86,6 +103,10 @@ export default {
     bottom: 0%;
     left: 0;
     // z-index: 2;
+  }
+  iframe {
+    width: 80%;
+    margin: 0 auto;
   }
 }
 </style>

@@ -68,7 +68,7 @@
       title="輸入聊天室名字"
       width="80%"
       center
-      :modal="false"
+      :modal="true"
       :show-close="false"
       :visible.sync="inputNameDialog"
       :before-close="()=>{}"
@@ -117,7 +117,7 @@ export default {
   {
     return {
       textInput: "",
-      userName: "test",
+      userName: "",
       chatList: new Map(),
       inputNameDialog: true
     };
@@ -263,6 +263,13 @@ export default {
 };
 </script>
 
+<style lang="scss">
+#chat{
+  .el-dialog{
+    margin-top:30vh!important;
+  }
+}
+</style>
 <style lang="scss" scoped>
 .animated{
   animation-duration: .4s;
@@ -316,6 +323,7 @@ export default {
         text-align: left;
         .betCSS{
           color:orange;
+          cursor: pointer;
         }
         .giftCSS{
           color: rgb(183, 117, 211);
