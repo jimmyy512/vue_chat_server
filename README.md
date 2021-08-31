@@ -1,6 +1,6 @@
 # vue_chat_server
-利用vue搭配Nodejs來簡單實作聊天室
-並且利用GCP服務架設
+利用vue搭配Nodejs來簡單實作聊天室  
+並且利用GCP架設服務
 
 ## 線上demo
 https://vue-chat-demo.jimmyy512.com/
@@ -19,7 +19,19 @@ Vue.use(new VueSocketIO({
     }
 }))
 ```
+運行前端
+```
+npm run serve
+```
 ### Server(Node.js)端設定  
 打開"server/index.js"文件,server listen地方可填入,server的port.  
 server.listen(改成自己想要的port,()=>{ console.log("server start"); });  
-輸入node index.js來啟動伺服器
+### 運行後端服務器
+```
+node index.js
+```
+
+第一次運行前皆須安裝套件
+```
+npm i
+```
