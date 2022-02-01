@@ -1,6 +1,5 @@
 # vue_chat_server
 利用vue搭配Nodejs來簡單實作聊天室  
-並且利用GCP架設服務
 
 ## 線上demo
 https://vue-chat-demo.jimmyy512.com/
